@@ -10,6 +10,12 @@ public class Student {
     public Student() {
     }
 
+    public Student(String name, String address, Float point) {
+        this.name = name;
+        this.point = point;
+        this.address = address;
+    }
+
     public Student(Long id, String name, String address, Float point) {
         this.id = id;
         this.name = name;

@@ -29,10 +29,15 @@
                 <a class="nav-link" href="/class">Lớp học</a>
             </div>
         </div>
+        <form class="d-flex" action="student" method="post">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+            <input type="hidden" name="action" value="search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
     </div>
 </nav>
 <div class="container">
-    <button class="btn btn-primary mt-4">Thêm</button>
+    <button class="btn btn-primary mt-4" onclick="window.location.href='/student?action=create'">Thêm</button>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -69,22 +74,30 @@
                     </c:choose>
                 </td>
                 <td>
-                    <button class="btn btn-warning">Sửa</button>
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal${student.id}">Xóa</button>
-                    <div class="modal fade" id="deleteModal${student.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <a href="/student?action=edit&id=${student.id}" class="btn btn-warning">edit</a>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal${student.id}">
+                        Xóa
+                    </button>
+                    <div class="modal fade" id="deleteModal${student.id}" tabindex="-1"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Xóa học sinh</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     Bạn có muốn xóa học sinh có tên là ${student.name}?
                                     <p style="color: red">Hành động này không thể hoàn tác!!!!!</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                    <button type="button" class="btn btn-primary">Xác nhận</button>
+                                    <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <form action="/student?action=delete" method="post">
+                                        <button type="submit" class="btn btn-primary">Xác nhận</button>
+                                        <input type="hidden" name="id" value="${student.id}">
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
