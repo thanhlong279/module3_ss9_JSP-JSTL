@@ -23,7 +23,6 @@ public class StudentService implements IStudentService {
 
     @Override
     public Boolean deleteByID(Long id) {
-
         return studentRepository.deleteByID(id);
     }
 
