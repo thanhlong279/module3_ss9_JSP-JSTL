@@ -18,4 +18,5 @@ List<Student> findAll();
     Student findById(Long id);
 
     List<Student> searchByName(String search);
+
 }

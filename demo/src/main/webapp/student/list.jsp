@@ -42,7 +42,6 @@
         <thead>
         <tr>
             <th>Số thứ tự</th>
-            <th>Mã</th>
             <th>Họ và tên</th>
             <th>Địa chỉ</th>
             <th>Điểm</th>
@@ -55,7 +54,6 @@
         <c:forEach var="student" items="${students}" varStatus="status">
             <tr>
                 <td>${status.count}</td>
-                <td>${student.id}</td>
                 <td>${student.name}</td>
                 <td>${student.address}</td>
                 <td>${student.point}</td>

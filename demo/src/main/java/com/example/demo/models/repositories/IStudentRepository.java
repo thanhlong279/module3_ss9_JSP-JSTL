@@ -12,4 +12,5 @@ public interface IStudentRepository {
     Boolean deleteByID(Long id);
 
     void editById(Long id, Student student);
+
 }
