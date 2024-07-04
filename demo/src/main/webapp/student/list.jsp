@@ -43,8 +43,9 @@
         <tr>
             <th>Số thứ tự</th>
             <th>Họ và tên</th>
-            <th>Địa chỉ</th>
+            <th>Lớp</th>
             <th>Điểm</th>
+            <th>Địa chỉ</th>
             <th>Học lực</th>
             <th>Chức năng</th>
         </tr>
@@ -56,6 +57,7 @@
                 <td>${status.count}</td>
                 <td>${student.name}</td>
                 <td>${student.address}</td>
+                <td>${student.nameClass}</td>
                 <td>${student.point}</td>
                 <td>
                         <%--                    <c:if test="${student.point >= 8}">Học sinh giỏi</c:if>--%>

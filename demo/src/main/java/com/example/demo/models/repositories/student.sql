@@ -8,4 +8,15 @@ create table student(
     point float
 );
 
-update student set name = 'Hoang Dao'
+alter table student add id_class int null ;
+
+create table classroom(
+    id_class int primary key auto_increment,
+    name_class varchar(50)
+);
+
+drop table classroom;
+
+alter table student add constraint student_classroom_id_class_fk
+foreign key (id_class) references classroom(id_class);
+
